@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iOS Bridge Demo</title>
+
+<style>
+    html, body {
+        margin: 0;
+    }
+
+    button {
+        width: 100%;
+    }
+</style>
+
+<script>
+    function toNative() {
+        const sendData = {
+            id: "buybuy",
+            data: {
+                id: 123,
+                title: "감귤",
+                content: "10kg"
+            }
+        };
+
+        window.webkit.messageHandlers.cumaiOS.postMessage(sendData);
+    }
+</script>
+
+<body>
+    <button onclick="toNative();">앱으로 전달</button>
+</body>
+
+</html>
